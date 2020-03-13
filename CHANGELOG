@@ -1,0 +1,51 @@
+Release Log
+===========
+Intellejos version: beta 1.0.2 
+Release date: 17-02-2005
+
+Fixes:
+
+- Arbitrator class repaired.
+
+
+Modification Log compared to Intellego
+======================================
+
+By Tijn Kooijmans, <intellejos@kooijmans.nu>
+
+Intellejos is a modified version of the Intellego software, developed by Graham Ritchie. The modifications that were made to Intellego are listed below. The enclosed GNU Licence applies to Intellejos as a full package.
+
+
+Modified source files:
+
+- AbstractRobot.java
+- BasicSimWorld.java
+- Controller.java
+- Intellego.java
+- MainInterface.java
+- SimRCX.java
+- SimSensor.java
+- SimUI.java
+
+New source files:
+
+- Modified lejos classes
+- RobotLoader.java
+- SimPath.java
+- Grid.java
+- Room.java
+- Jojo.java
+
+Removed source files:
+
+- HybridCommandConstants.java
+- HybridOnBoard.java
+- HybridRCX.java
+- ControllerDL.java
+- RealRCX.java
+- SimLight.java
+- CodeEditor.java
+- LightWorld.java
+- all Controller implementations
+
+

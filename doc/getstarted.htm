@@ -1,0 +1,878 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<base target="_blank">
+<link rel=File-List href="getstarted_files/filelist.xml">
+<title>LeJOS &amp; Eclipse Installation Guide </title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Tijn Kooijmans</o:Author>
+  <o:LastAuthor>Tijn Kooijmans</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>8</o:TotalTime>
+  <o:Created>2005-02-16T11:11:00Z</o:Created>
+  <o:LastSaved>2005-02-16T11:11:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>367</o:Words>
+  <o:Characters>2096</o:Characters>
+  <o:Company>Technische Universiteit Eindhoven</o:Company>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2459</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:"Times New Roman";}
+h5
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{mso-style-parent:"";
+	font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:-1484625980;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1835824577 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l0:level1
+	{mso-level-suffix:none;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level2
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level3
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level4
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level5
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level6
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level7
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l0:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1
+	{mso-list-id:-874702089;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1994351292 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l1:level1
+	{mso-level-suffix:none;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level2
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level3
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level4
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level5
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level6
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level7
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l1:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2
+	{mso-list-id:-745433471;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1471104274 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l2:level1
+	{mso-level-suffix:none;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level2
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level3
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level4
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level5
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level6
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level7
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l2:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3
+	{mso-list-id:-506723301;
+	mso-list-type:hybrid;
+	mso-list-template-ids:805086318 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l3:level1
+	{mso-level-suffix:none;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level2
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level3
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level4
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level5
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level6
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level7
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l3:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l4
+	{mso-list-id:93289583;
+	mso-list-type:hybrid;
+	mso-list-template-ids:244325910 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:516313196;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-234604508 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:652791179;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1409321495 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l6:level1
+	{mso-level-suffix:none;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level2
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level3
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level4
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level5
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level6
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level7
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l6:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l7
+	{mso-list-id:667751030;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-11215840 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:796603551;
+	mso-list-type:hybrid;
+	mso-list-template-ids:104333398 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l9
+	{mso-list-id:1315258401;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1539801794 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:1535180715;
+	mso-list-type:hybrid;
+	mso-list-template-ids:573084359 -1 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l10:level1
+	{mso-level-suffix:none;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level2
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level3
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level4
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level5
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level6
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level7
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l10:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11
+	{mso-list-id:2079745944;
+	mso-list-type:hybrid;
+	mso-list-template-ids:10800800 67698689 -1 -1 -1 -1 -1 -1 -1 -1;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l11:level2
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11:level3
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11:level4
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11:level5
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11:level6
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11:level7
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+@list l11:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0cm;
+	text-indent:0cm;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h1 style='margin-top:0cm'><span class=SpellE><span style='font-size:24.0pt'>LeJOS</span></span><span
+style='font-size:24.0pt'> &amp; Eclipse Installation Guide for Windows 2000 /
+XP <o:p></o:p></span></h1>
+
+<p class=MsoNormal><span style='font-size:14.0pt;font-family:Arial'>An easy way
+to get started with Java for Lego Mindstorms<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='color:black'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span class=SpellE>Introducation</span></h1>
+
+<p class=MsoNormal><span style='color:black'>Eclipse is an open source
+Integrated Development Environment for JAVA that works perfectly together with <span
+class=SpellE>LeJOS</span> (Lego Java Operating System), which enables
+programmers to control Lego Mindstorms with Java. This is a very powerful
+combination that increases the ease of programming the RCX. Here is a quick
+guide that explains you how to set it up:<o:p></o:p></span></p>
+
+<h3><span style='color:black'>Step 1: Install Java 2 SDK <o:p></o:p></span></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l9 level1 lfo8;tab-stops:list 36.0pt'><span
+     style='mso-bidi-font-size:10.0pt'>Download version 1.4.* of Java 2 SDK at <a
+     href="http://java.sun.com/"><span style='mso-bidi-font-family:"Times New Roman"'>http://java.sun.com</span></a>
+     <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l9 level1 lfo8;tab-stops:list 36.0pt'><span
+     style='mso-bidi-font-size:10.0pt'>Run the installation file<o:p></o:p></span></li>
+</ul>
+
+<h3>Step 2: Install <span class=SpellE>LeJOS</span> and Eclipse </h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo9;tab-stops:list 36.0pt'>Download
+     the latest version of <span class=SpellE>LeJOS</span> at <a
+     href="http://lejos.sourceforge.net/"><span style='mso-bidi-font-family:
+     "Times New Roman"'>http://lejos.sourceforge.net</span></a> and extract the
+     .zip file to C:\ so that you create C:\Lejos\...</li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo9;tab-stops:list 36.0pt'>Download
+     version 2.*.* (3.* won’t work) of Eclipse at <a
+     href="http://www.eclipse.org/"><span style='mso-bidi-font-family:"Times New Roman"'>http://www.eclipse.org</span></a>
+     and extract the .zip file to C:\ so that you create C:\Eclipse</li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo9;tab-stops:list 36.0pt'>Download
+     the <span class=SpellE>LeJOS</span> <span class=SpellE>plugin</span> for
+     Eclipse <a
+     href="http://www.info.ucl.ac.be/people/chp/projects/javarcx/eclipse/org.lejos_1.0.2.zip"><span
+     style='mso-bidi-font-family:"Times New Roman"'>here</span></a> and extract
+     the .zip file to C:\Eclipse\plugins</li>
+</ul>
+
+<h3>Step 3: Setup Eclipse </h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt'>Open
+     Eclipse with <span style='mso-bidi-font-weight:bold'>C:\Eclipse\eclipse.exe<b>
+     </b></span></li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt'>Click
+     <span style='mso-bidi-font-weight:bold'>Window </span>-&gt; <span
+     style='mso-bidi-font-weight:bold'>Preferences<b> </b></span></li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt'>Go
+     to <span class=SpellE><span style='mso-bidi-font-weight:bold'>leJOS</span></span><b>
+     </b>pane </li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt'>Fill
+     in the <span class=SpellE>leJOS</span> installation directory, which is in
+     this case <span style='mso-bidi-font-weight:bold'>C:\Lejos<b> </b></span></li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt'>Choose
+     <span style='mso-bidi-font-weight:bold'>com1<b> </b></span>for RCX communication
+     port </li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt'>Choose
+     <span class=GramE><span style='mso-bidi-font-weight:bold'>slow</span></span><b>
+     </b>for data transfer rate. If you choose fast, the chance is very high
+     that a data transfers fail since the signal is very sensitive for external
+     light </li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt'>Confirm
+     your settings by clicking the <span style='mso-bidi-font-weight:bold'>OK<b>
+     </b></span>button </li>
+</ul>
+
+<h3>Step 4: Start a project </h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo11;tab-stops:list 36.0pt'>Click
+     <span style='mso-bidi-font-weight:bold'>File </span>-&gt; <span
+     style='mso-bidi-font-weight:bold'>New </span>-&gt; <span style='mso-bidi-font-weight:
+     bold'>Project… </span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo11;tab-stops:list 36.0pt'>Select
+     “<span class=SpellE><span style='mso-bidi-font-weight:bold'>LeJOS</span></span><span
+     style='mso-bidi-font-weight:bold'> project” </span>and click <span
+     class=GramE><span style='mso-bidi-font-weight:bold'>Next</span></span>.
+     This wizard will let you enter some details for the project. Usually it’s
+     enough to enter your project name and click <span style='mso-bidi-font-weight:
+     bold'>Finish </span>to confirm </li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo11;tab-stops:list 36.0pt'>Open
+     the Java perspective by clicking <span style='mso-bidi-font-weight:bold'>Window
+     </span>-&gt; <span style='mso-bidi-font-weight:bold'>Open Perspective </span>-&gt;
+     <span style='mso-bidi-font-weight:bold'>Java </span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo11;tab-stops:list 36.0pt'>To
+     start coding add a new class to the project by clicking <span
+     style='mso-bidi-font-weight:bold'>File </span>-&gt; <span
+     style='mso-bidi-font-weight:bold'>New </span>-&gt; <span style='mso-bidi-font-weight:
+     bold'>Class </span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo11;tab-stops:list 36.0pt'>Your
+     code is compiled at your cursor and eclipse will indicate errors at your
+     cursor </li>
+</ul>
+
+<h3>Step 5: Patch the RCX firmware for <span class=SpellE>LeJOS</span> </h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l8 level1 lfo12;tab-stops:list 36.0pt'>Make
+     sure that the IR tower is connected to the computer and the RCX is in
+     range of the tower and switched on. </li>
+ <li class=MsoNormal style='mso-list:l8 level1 lfo12;tab-stops:list 36.0pt'>Click
+     <span class=SpellE><span style='mso-bidi-font-weight:bold'>LeJOS</span></span><span
+     style='mso-bidi-font-weight:bold'> </span>-&gt; <span style='mso-bidi-font-weight:
+     bold'>Firmware <span class=SpellE>Dowload</span> </span></li>
+</ul>
+
+<h3>Step 6: Upload your code to the RCX </h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l8 level1 lfo12;tab-stops:list 36.0pt'>Open
+     the class of your project that contains the main method</li>
+ <li class=MsoNormal style='mso-list:l8 level1 lfo12;tab-stops:list 36.0pt'>Click
+     <span class=SpellE><span style='mso-bidi-font-weight:bold'>LeJOS</span></span><span
+     style='mso-bidi-font-weight:bold'> </span>-&gt; <span class=SpellE><span
+     style='mso-bidi-font-weight:bold'>Bytecode</span></span><span
+     style='mso-bidi-font-weight:bold'> Download</span></li>
+</ul>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:auto;
+mso-break-type:section-break'>
+</span>
+
+<div class=Section2>
+
+<h1><span style='font-weight:normal;mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></h1>
+
+<p class=MsoNormal>© 2004 Tijn Kooijmans</p>
+
+</div>
+
+</body>
+
+</html>

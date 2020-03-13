@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Pizza Viewer Help</title>
+	<meta name="generator" content="BBEdit 7.1.4" />
+</head>
+<body>
+<h1>PizzaViewer Tutorial</h1>
+<i>Kees Huizing -- 21 February, 2005</i>
+<br>
+<b>Update 22 February, 2005</b>: error in description of Solver removed.
+
+<h2> Installation </h2>
+Pizza Viewer is a program to test your solution algorithm for the pizza delivery.
+Directions of use:
+
+<ol>
+<li> Copy the Java files in 
+<a href="http://www.win.tue.nl/~keesh/ow/id/pizzaviewer/"> http://www.win.tue.nl/~keesh/ow/id/pizzaviewer</a> to a local directory on your computer. These are the files PizzaViewer.java, PizzaPanel.java, Solver.java, SimpleSolver.java, PointP.java. 
+<li> Trying it out: Compile the files and run SimpleSolver or PizzaViewer. You will see a grid where you can experiment. 
+<li> Add your own class(es) to the same directory; see below.
+</ol>
+
+<h2> Writing your own solution</h2>
+
+The PizzaViewer comes with a simple algorithm that does hardly anything. It only serves as an example of what you have to do in your own algorithm. To add your own algorithm, do the following:
+
+<ol>
+<li> Write a class that <i>implements</i> the interface <b>Solver</b>. See SimpleSolver.java for an example. You have to implement the following methods:
+    <dl>
+	<dt><tt>String getAuthors()</tt> </dt>
+		<dd>Should return your names; restrict it to one line of text.</dd>
+    <dt><tt>String getDescription()</tt> </dt>
+        <dd>Should return a description of your algorithm. 
+    <dt><tt>PointP[] computeRoute(PointP[] addresses)</tt> </dt>
+        <dd>This is your actual solution. It takes an arra of delivery addresses and should return the same addresses in the order that the delivery boy should follow. See below for a description of the class <a href="#PointP">PointP</a>. 
+    </dl>
+<li> Compile your class and run PizzaViewer. Fill in the line after "Solver class:" with the name of your class. Press Enter. Now your algorithm will be used by the Pizza Viewer. 
+<li> You can also add a main-method to your solver class that starts the Pizza Viewer with your own solver. See SimpleSolver.java for an example. This way, you can run directly from the window with your solver code (handy for Jaspis users) and you don't have to type in the name of your class in the Pizza Viewer.
+</ol>
+
+<h2>Using Pizza Viewer</h2>
+
+When you run the program, you see a grid that shows all possible delivery points of the delivery robot. Click on a grid point to add it to the list of delivery points (called cities). 
+<p>
+When you are content with the cities shown, you can press "Compute Route". The method <tt>computeRoute</tt> of your algorithm will be called with the list of cities shown in the grid. When it is finished, the route that your algorithm has computed will be drawn on the grid. The total distance is computed and shown as "Euclidean distance". The "Grid distance" is the total distance when the robot would follow the grid lines. This route is not drawn on the screen.
+<p> 
+If you want to keep a list of cities for later use, you can press "Save Cities" to save the list in a file. You can later return to this list by pressing "Load Cities". 
+<p>
+You can also write such a file yourself. Use any text editor and write the cities as pairs of integer numbers. The file should start with "0 0", the starting point of the robot. Example: 
+<pre>
+0 0
+2 0
+2 2
+4 4
+</pre>
+
+The route is always a round trip, i.e., after the last city in the list, the robot should return to the starting point. This counts with the total distance.
+
+It is recommended that you put two numbers on a line. The first number on the line is the x-coordinate of the point, the second number is the y-coordinate. The point with coordinates <tt>0 0</tt> is the upper left point of the grid. 
+
+<h2 id=PointP>The class PointP </h2>
+
+The class PointP is a replacement for the class java.awt.Point, since the latter is not available in the Lego robot. To keep it small, not all methods are implemented. For your convenience, an extra method has been added for the computation of distances. 
+<h3>Examples</h3>
+See SimpleSolver.java and PizzaPanel.java.
+
+<h3>Methods and variables</h3>
+
+For a complete list, see the code in PointP.java.
+<dl>
+<dt><tt>int x</tt></dt>
+    <dd>Variable that holds the x-coordinate of the point. Be careful with changing this variable. It's better to create a new object.</dd>
+<dt><tt>int y</tt></dt>
+    <dd>Ditto for the y-coordinate.
+    </dd>
+<dt><tt>PointP(int x, int y)</tt></dt>
+    <dd>Constructor that creates a PointP with coordinates x and y.</dd>
+<dt><tt>PointP(PointP p)</tt></dt>
+    <dd>Constructor that creates a PointP with the same coordinates as p. Can be used to copy a PointP.</dd>
+<dt><tt>float distance(PointP p, PointP q)</tt></dt>
+    <dd>Computes the (Euclidean) distance between p and q. </dd>
+<dt><tt>float distance(int px, int py, int qx, int qy)</tt></dt>
+    <dd>Computes the (Euclidean) distance between the points (px,py) and (qx,qy). </dd>
+<dt><tt>boolean equals(PointP p)</tt></dt>
+    <dd>Returns true if the current PointP and p are the same points in space, i.e., have the same coordinates, even if the objects are different.
+</dl>
+</body>
+</html>
